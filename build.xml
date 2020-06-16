@@ -38,14 +38,13 @@
         <java jar="build/jar/hello.jar" fork="true"/>
     </target>
 
-    <target name="junit" depends="tjar">
+    <target name="junit" depends="resolve">
         <junit printsummary="yes" haltonfailure="no">
         
         <classpath refid="classpath" />
         <classpath location="test"/>
 
-        <classpath location="lib/junit-4.11.jar" />
-	    <classpath location="lib/hamcrest-core-1.3.jar" />
+        <classpath location="lib/ant-junit-4.jar" />
         <test name="hellotest" haltonfailure="no" todir="test/results">
         <formatter type="plain"/>
         <formatter type="xml"/>
