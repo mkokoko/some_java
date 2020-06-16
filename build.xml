@@ -39,7 +39,8 @@
     </target>
 
     <target name="junit" depends="tjar">
-        <junit printsummary="yes">
+        <junit printsummary="yes" haltonfailure="no">
+        
         <classpath refid="classpath" />
         <classpath location="test"/>
 
