@@ -38,7 +38,7 @@
         <java jar="build/jar/hello.jar" fork="true"/>
     </target>
 
-    <target name="junit" depends="resolve">
+    <target name="junit" depends="tjar">
         <junit printsummary="yes" haltonfailure="no">
         
         <classpath refid="classpath" />
