@@ -22,4 +22,5 @@ jobs:
               uses: docker/build-push-action@v3
               with:
                 context: .
+                file: {context}/.github/workflows/Dockerfile
                 tags: mkokoko/react:latest
