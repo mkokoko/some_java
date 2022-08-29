@@ -16,8 +16,10 @@ jobs:
               with:
                 username: ${{ secrets.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
-                
-            - uses: docker/build-push-action@v3
+
+            - 
+              name: Build and push
+              uses: docker/build-push-action@v3
               with:
-                dockerfile: 'Dockerfile'
+                context: .
                 tags: mkokoko/react:latest
