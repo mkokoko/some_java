@@ -9,11 +9,15 @@ jobs:
         runs-on: self-hosted
         steps:
             - uses: actions/checkout@v2
-    
-            - uses: docker/build-push-action@v2
+
+            -
+              name: Login to DockerHub
+              uses: docker/login-action@v2
+              with:
+                username: ${{ secrets.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
+                
+            - uses: docker/build-push-action@v3
               with:
                 dockerfile: 'Dockerfile'
-                username: ${{ secrets.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_PASSWORD }}
-                repository: mkokoko/react
-                tags: latest
+                tags: mkokoko/react:latest
