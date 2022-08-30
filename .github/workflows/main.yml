@@ -35,5 +35,5 @@ jobs:
                 file: "./.github/workflows/Dockerfile"
                 tags: |
                   mkokoko/react:${{ GITHUB_SHA }}
-                  482720962971.dkr.ecr.us-east-1.amazonaws.com/java:${{ GITHUB_SHA }}
+                  482720962971.dkr.ecr.us-east-1.amazonaws.com/java:${{ env.GITHUB_SHA }}
             
