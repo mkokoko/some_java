@@ -21,7 +21,7 @@ jobs:
               name: Login to ECR
               uses: docker/login-action@v2
               with:
-                registry: $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+                registry: ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION}}.amazonaws.com
                 username: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             -
@@ -41,6 +41,6 @@ jobs:
                 tags: |
                   mkokoko/react:${{ github.sha }}
                   mkokoko/react:dev
-                  $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/java:${{ github.sha }}
-                  $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/java:dev
+                  ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION}}.amazonaws.com/java:${{ github.sha }}
+                  ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION}}.amazonaws.com/java:dev
             
