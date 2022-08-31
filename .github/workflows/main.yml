@@ -48,5 +48,5 @@ jobs:
             - run: cat .github/workflows/variables/dev.env >> $GITHUB_ENV
 
             - name: Use the value
-              run: echo $GITHUB_ENV
+              run: echo $ACCOUNT_ID
             
